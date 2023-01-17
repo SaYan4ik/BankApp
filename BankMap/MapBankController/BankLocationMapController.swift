@@ -14,7 +14,14 @@ class BankLocationMapController: UIViewController {
 
     private var data = [BankModel]() {
         didSet {
-            drawMarker()
+            drawMarkerForATM()
+        }
+    }
+    
+    private var filials = [FilialModel]() {
+        didSet {
+        drawMarkForFilial()
+            
         }
     }
     
@@ -25,13 +32,19 @@ class BankLocationMapController: UIViewController {
         getBankInfo()
     }
     
-    func getBankInfo() {
-        GetBankInfo().getInfo(city: "Минск") { banks in
+    private func getBankInfo() {
+        GetBankInfo().getInfo(city: "") { banks in
             self.data = banks
         }
     }
     
-    private func drawMarker() {
+    private func getFilialInfo() {
+        GetBankInfo().getFilialInfo { allFilials in
+            self.filials = allFilials
+        }
+    }
+    
+    private func drawMarkerForATM() {
         data.forEach { bank in
             let mark = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(bank.gpsX) ?? 0.0, longitude: Double(bank.gpsY) ?? 0.0))
             mark.map = mapView
@@ -45,50 +58,15 @@ class BankLocationMapController: UIViewController {
         }
     }
     
-    private func drawMarkForBank(bank: BankModel) {
-        let mark = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(bank.gpsX) ?? 0.0, longitude: Double(bank.gpsY) ?? 0.0))
-        mark.map = mapView
-        mark.title = bank.addressType + bank.address + bank.numHouse
-        mark.snippet = " Время работы \(bank.warkTime)"
-        mark.icon = GMSMarker.markerImage(with: .orange)
-        mapView.selectedMarker = mark
-        mapView.selectedMarker = nil
-        marks.append(mark)
-    }
-    
-    @IBAction func bynButtonDidTap(_ sender: Any) {
-        mapView.clear()
-        data.forEach { bank in
-            let currency = bank.currency.split{ $0 == " " }
-            if currency.contains("BYN") {
-                drawMarkForBank(bank: bank)
-            }
+    private func drawMarkForFilial() {
+        filials.forEach { filial in
+            let mark = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(filial.gpsX) ?? 0.0, longitude: Double(filial.gpsY) ?? 0.0))
+            mark.map = mapView
+            mark.title = "Филиал \(filial.filialName)"
+            mapView.selectedMarker = mark
+            mapView.selectedMarker = nil
+            marks.append(mark)
         }
     }
-    
-    @IBAction func allBanksDidTap(_ sender: Any) {
-        mapView.clear()
-        drawMarker()
-    }
-    
-    @IBAction func usdButtonDidTap(_ sender: Any) {
-        mapView.clear()
-        data.forEach { bank in
-            let currency = bank.currency.split{ $0 == " " }
-            if currency.contains("USD") {
-                drawMarkForBank(bank: bank)
-            }
-        }
-    }
-    
-    @IBAction func eurButtonDidTap(_ sender: Any) {
-        mapView.clear()
-        data.forEach { bank in
-            let currency = bank.currency.split{ $0 == " " }
-            if currency.contains("EUR") {
-                drawMarkForBank(bank: bank)
-            }
-        }
-    }
-    
+
 }
