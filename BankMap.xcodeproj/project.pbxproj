@@ -11,6 +11,7 @@
 		A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE529770BAD0057989F /* TabBarController.swift */; };
 		A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE829770D920057989F /* ProfileController.swift */; };
 		A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAE929770D920057989F /* ProfileController.xib */; };
+		A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEC297710CB0057989F /* FilialModel.swift */; };
 		A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDC2970662100A5B216 /* AppDelegate.swift */; };
 		A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDE2970662100A5B216 /* SceneDelegate.swift */; };
 		A2DCECE12970662100A5B216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECE02970662100A5B216 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		A2C1FAE529770BAD0057989F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A2C1FAE829770D920057989F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A2C1FAE929770D920057989F /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
+		A2C1FAEC297710CB0057989F /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		A2DCECD92970662100A5B216 /* BankMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DCECDC2970662100A5B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2DCECDE2970662100A5B216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A2DCECF2297067AF00A5B216 /* BankModel.swift */,
+				A2C1FAEC297710CB0057989F /* FilialModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */,
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
 				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,
