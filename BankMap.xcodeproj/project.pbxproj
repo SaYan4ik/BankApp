@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1728127309C3D682AD4B874E /* Pods_BankMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */; };
+		A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE529770BAD0057989F /* TabBarController.swift */; };
+		A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE829770D920057989F /* ProfileController.swift */; };
+		A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAE929770D920057989F /* ProfileController.xib */; };
 		A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDC2970662100A5B216 /* AppDelegate.swift */; };
 		A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDE2970662100A5B216 /* SceneDelegate.swift */; };
 		A2DCECE12970662100A5B216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECE02970662100A5B216 /* ViewController.swift */; };
@@ -25,6 +28,9 @@
 		1CAB5F5FB14F2D3534D8434E /* Pods-BankMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankMap.release.xcconfig"; path = "Target Support Files/Pods-BankMap/Pods-BankMap.release.xcconfig"; sourceTree = "<group>"; };
 		6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D32020E73FBAE893F54E85E /* Pods-BankMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankMap.debug.xcconfig"; path = "Target Support Files/Pods-BankMap/Pods-BankMap.debug.xcconfig"; sourceTree = "<group>"; };
+		A2C1FAE529770BAD0057989F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A2C1FAE829770D920057989F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		A2C1FAE929770D920057989F /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
 		A2DCECD92970662100A5B216 /* BankMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DCECDC2970662100A5B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2DCECDE2970662100A5B216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2A51BBD29770B3C00B9DB92 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FAE529770BAD0057989F /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		A2C1FAE729770D7D0057989F /* ProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FAE829770D920057989F /* ProfileController.swift */,
+				A2C1FAE929770D920057989F /* ProfileController.xib */,
+			);
+			path = ProfileController;
+			sourceTree = "<group>";
+		};
 		A2DCECD02970662100A5B216 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +113,8 @@
 		A2DCECDB2970662100A5B216 /* BankMap */ = {
 			isa = PBXGroup;
 			children = (
+				A2C1FAE729770D7D0057989F /* ProfileController */,
+				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
 				A2DCECF829706E0C00A5B216 /* MapBankController */,
 				A2DCECF1297067A000A5B216 /* Models */,
 				A2DCECF02970671A00A5B216 /* BankAPI */,
@@ -191,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */,
 				A2DCECE92970662300A5B216 /* LaunchScreen.storyboard in Resources */,
 				A2DCECFC29706E3800A5B216 /* BankLocationMapController.xib in Resources */,
 				A2DCECE62970662300A5B216 /* Assets.xcassets in Resources */,
@@ -265,9 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
+				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,
 				A2DCECFB29706E3800A5B216 /* BankLocationMapController.swift in Sources */,
 				A2DCECF7297067C800A5B216 /* BankProvider.swift in Sources */,
+				A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */,
 				A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */,
 				A2DCECF5297067BE00A5B216 /* BankAPI.swift in Sources */,
 				A2DCECF3297067AF00A5B216 /* BankModel.swift in Sources */,
