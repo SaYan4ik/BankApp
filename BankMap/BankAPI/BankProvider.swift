@@ -24,4 +24,18 @@ final class GetBankInfo {
             }
         }
     }
+    
+    func getFilialInfo(complition: @escaping ([FilialModel]) -> Void, failure: (() -> Void)? = nil) {
+        provider.request(.getFilialInfo) { result in
+            switch result {
+                case .success(let response):
+                    guard let filial = try? response.mapArray(FilialModel.self) else { return }
+                    complition(filial)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    failure?()
+            }
+        }
+    }
+    
 }
