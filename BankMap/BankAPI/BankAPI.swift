@@ -10,6 +10,7 @@ import Moya
 
 enum BankAPI {
     case getBankInfo(city: String)
+    case getFilialInfo
 }
 
 extension BankAPI: TargetType {
@@ -20,13 +21,17 @@ extension BankAPI: TargetType {
     var path: String {
         switch self {
             case .getBankInfo:
-                return ""
+                return "/atm"
+            case .getFilialInfo:
+                return "/filials_info"
         }
     }
     
     var method: Moya.Method {
         switch self {
             case .getBankInfo:
+                return .get
+            case .getFilialInfo:
                 return .get
         }
     }
@@ -51,6 +56,8 @@ extension BankAPI: TargetType {
         switch self {
             case .getBankInfo(let city):
                 params["city"] = city
+            case .getFilialInfo:
+                return nil
         }
         return params
     }
@@ -58,6 +65,8 @@ extension BankAPI: TargetType {
     var encoding: ParameterEncoding {
         switch self {
             case .getBankInfo:
+                return URLEncoding.queryString
+            case .getFilialInfo:
                 return URLEncoding.queryString
         }
     }
