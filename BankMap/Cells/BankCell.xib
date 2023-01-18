@@ -46,7 +46,8 @@
             </constraints>
             <size key="customSize" width="230" height="56"/>
             <connections>
-                <outlet property="bankCell" destination="Rf2-cG-0Um" id="m7I-ko-qNA"/>
+                <outlet property="bankCellLabel" destination="Rf2-cG-0Um" id="oAi-0W-cUK"/>
+                <outlet property="container" destination="O3D-jt-VbK" id="Ucl-5l-PcG"/>
             </connections>
             <point key="canvasLocation" x="29.23076923076923" y="22.748815165876778"/>
         </collectionViewCell>

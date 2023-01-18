@@ -11,10 +11,8 @@ import GoogleMaps
 
 class BankLocationMapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
-    
     @IBOutlet weak var cityCollectionView: UICollectionView!
     @IBOutlet weak var atmBankCollectionView: UICollectionView!
-    
     
     private var data = [BankModel]() {
         didSet {
@@ -29,8 +27,8 @@ class BankLocationMapController: UIViewController {
     }
     
     private var cityName = [String]()
-
-    var marks = [GMSMarker]()
+    private var bankAtmType = BankType.allCases
+    private var selectedIndexPath = IndexPath(row: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +43,7 @@ class BankLocationMapController: UIViewController {
     
     private func registrationCell() {
         let nib = UINib(nibName: BankCell.id, bundle: nil)
-        cityCollectionView.register(nib, forCellWithReuseIdentifier: BankCell.id)
+        atmBankCollectionView.register(nib, forCellWithReuseIdentifier: BankCell.id)
         
         let nibCity = UINib(nibName: CityCell.id, bundle: nil)
         cityCollectionView.register(nibCity, forCellWithReuseIdentifier: CityCell.id)
@@ -68,12 +66,10 @@ class BankLocationMapController: UIViewController {
     }
     
     private func getFilialInfo() {
-        GetBankInfo().getFilialInfo { allFilials in
+        GetBankInfo().getFilialInfo(city: "") { allFilials in
             self.filials = allFilials
         }
     }
-    
-    
     
     private func drawMarkerForATM() {
         data.forEach { bank in
@@ -82,7 +78,6 @@ class BankLocationMapController: UIViewController {
             mark.title = bank.addressType + bank.address + bank.numHouse
             mark.snippet = " Время работы \(bank.warkTime)"
             mark.icon = GMSMarker.markerImage(with: .orange)
-            
             mapView.selectedMarker = mark
             mapView.selectedMarker = nil
         }
@@ -100,24 +95,98 @@ class BankLocationMapController: UIViewController {
             mapView.selectedMarker = nil
         }
     }
-
+    
+    private func drawMarkersForBankCity(city: String) {
+        GetBankInfo().getInfo(city: city) { banks in
+            banks.forEach { bank in
+                self.drawMarkForBank(bank: bank)
+            }
+        }
+    }
+    
+    private func drawMarkersForFilialCity(city: String) {
+        GetBankInfo().getFilialInfo(city: city) { filials in
+            filials.forEach { filial in
+                self.drawMarkForFilial(filial: filial)
+            }
+        }
+    }
+    
+    private func drawMarkForBank(bank: BankModel) {
+        let mark = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(bank.gpsX) ?? 0.0, longitude: Double(bank.gpsY) ?? 0.0))
+        mark.map = mapView
+        mark.title = bank.addressType + bank.address + bank.numHouse
+        mark.snippet = " Время работы \(bank.warkTime)"
+        mark.icon = GMSMarker.markerImage(with: .orange)
+        mapView.selectedMarker = mark
+        mapView.selectedMarker = nil
+    }
+    
+    private func drawMarkForFilial(filial: FilialModel) {
+        guard let gpsX = filial.gpsX,
+              let gpsY = filial.gpsY else { return }
+        let mark = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(gpsX) ?? 0.0, longitude: Double(gpsY) ?? 0.0))
+        mark.map = mapView
+        mark.title = "Филиал \(String(describing: filial.filialName))"
+        mark.icon = GMSMarker.markerImage(with: .red)
+        mapView.selectedMarker = mark
+        mapView.selectedMarker = nil
+    }
 }
 
 
 extension BankLocationMapController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cityName.count
+        if collectionView == cityCollectionView {
+            return cityName.count
+        } else {
+            return bankAtmType.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cityCollectionView.dequeueReusableCell(withReuseIdentifier: CityCell.id, for: indexPath)
-        guard let cityCell = cell as? CityCell else { return cell }
-        cityCell.set(name: cityName[indexPath.item])
-        return cityCell
+        if collectionView == cityCollectionView {
+            let cell = cityCollectionView.dequeueReusableCell(withReuseIdentifier: CityCell.id, for: indexPath)
+            guard let cityCell = cell as? CityCell else { return cell }
+            cityCell.set(name: cityName[indexPath.item])
+            return cityCell
+        } else {
+            let cell = atmBankCollectionView.dequeueReusableCell(withReuseIdentifier: BankCell.id, for: indexPath)
+            guard let atmBankCell = cell as? BankCell else { return cell }
+            atmBankCell.set(bankType: bankAtmType[indexPath.item])
+            return atmBankCell
+        }
+        
     }
 
 }
 
 extension BankLocationMapController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == cityCollectionView {
+            mapView.clear()
+            drawMarkersForBankCity(city: cityName[indexPath.item])
+            drawMarkersForFilialCity(city: cityName[indexPath.item])
+            
+        } else if collectionView == atmBankCollectionView {
+            self.selectedIndexPath = indexPath
+            self.atmBankCollectionView.reloadData()
+             
+            let selectedItem = bankAtmType[indexPath.row]
+            
+            switch selectedItem {
+                case .bank:
+                    mapView.clear()
+                    drawMarkForFilial()
+                case .atm:
+                    mapView.clear()
+                    drawMarkerForATM()
+                case .all:
+                    mapView.clear()
+                    drawMarkerForATM()
+                    drawMarkForFilial()
+            }
+            
+        }
+    }
 }

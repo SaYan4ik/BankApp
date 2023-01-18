@@ -25,8 +25,8 @@ final class GetBankInfo {
         }
     }
     
-    func getFilialInfo(complition: @escaping ([FilialModel]) -> Void, failure: (() -> Void)? = nil) {
-        provider.request(.getFilialInfo) { result in
+    func getFilialInfo(city: String, complition: @escaping ([FilialModel]) -> Void, failure: (() -> Void)? = nil) {
+        provider.request(.getFilialInfo(city: city)) { result in
             switch result {
                 case .success(let response):
                     guard let filial = try? response.mapArray(FilialModel.self) else { return }

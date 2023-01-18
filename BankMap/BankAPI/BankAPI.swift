@@ -10,7 +10,7 @@ import Moya
 
 enum BankAPI {
     case getBankInfo(city: String)
-    case getFilialInfo
+    case getFilialInfo(city: String)
 }
 
 extension BankAPI: TargetType {
@@ -56,8 +56,8 @@ extension BankAPI: TargetType {
         switch self {
             case .getBankInfo(let city):
                 params["city"] = city
-            case .getFilialInfo:
-                return nil
+            case .getFilialInfo(let city):
+                params["city"] = city
         }
         return params
     }
