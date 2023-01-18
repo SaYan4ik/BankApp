@@ -30,6 +30,7 @@ final class GetBankInfo {
             switch result {
                 case .success(let response):
                     guard let filial = try? response.mapArray(FilialModel.self) else { return }
+                    print("filial get 200")
                     complition(filial)
                 case .failure(let error):
                     print(error.localizedDescription)

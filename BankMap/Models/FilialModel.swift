@@ -9,17 +9,17 @@ import Foundation
 import ObjectMapper
 
 class FilialModel: Mappable {
-    var id: Int = 0
-    var filialName: String = ""
-    var nameType: String = ""
-    var name: String = ""
-    var streetType: String = ""
-    var street: String = ""
-    var numHouse: String = ""
-    var gpsX: String = ""
-    var gpsY: String = ""
-    var warkTime: String = ""
-    var currency: String = ""
+    var id: Int?
+    var filialName: String?
+    var nameType: String?
+    var name: String?
+    var streetType: String?
+    var street: String?
+    var numHouse: String?
+    var gpsX: String?
+    var gpsY: String?
+    var warkTime: String?
+    var currency: String?
 
     required init?(map: ObjectMapper.Map) {
         mapping(map: map)

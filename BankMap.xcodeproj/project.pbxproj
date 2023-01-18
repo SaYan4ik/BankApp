@@ -12,6 +12,10 @@
 		A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE829770D920057989F /* ProfileController.swift */; };
 		A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAE929770D920057989F /* ProfileController.xib */; };
 		A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEC297710CB0057989F /* FilialModel.swift */; };
+		A2C1FAF129771B970057989F /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEF29771B970057989F /* BankCell.swift */; };
+		A2C1FAF229771B970057989F /* BankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAF029771B970057989F /* BankCell.xib */; };
+		A2C1FAF629771C120057989F /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAF429771C120057989F /* CityCell.swift */; };
+		A2C1FAF729771C120057989F /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAF529771C120057989F /* CityCell.xib */; };
 		A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDC2970662100A5B216 /* AppDelegate.swift */; };
 		A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDE2970662100A5B216 /* SceneDelegate.swift */; };
 		A2DCECE12970662100A5B216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECE02970662100A5B216 /* ViewController.swift */; };
@@ -33,6 +37,10 @@
 		A2C1FAE829770D920057989F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A2C1FAE929770D920057989F /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
 		A2C1FAEC297710CB0057989F /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
+		A2C1FAEF29771B970057989F /* BankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
+		A2C1FAF029771B970057989F /* BankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCell.xib; sourceTree = "<group>"; };
+		A2C1FAF429771C120057989F /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		A2C1FAF529771C120057989F /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		A2DCECD92970662100A5B216 /* BankMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DCECDC2970662100A5B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2DCECDE2970662100A5B216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +102,25 @@
 			path = ProfileController;
 			sourceTree = "<group>";
 		};
+		A2C1FAEE29771B770057989F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FAF329771C050057989F /* CityCell */,
+				A2C1FAEF29771B970057989F /* BankCell.swift */,
+				A2C1FAF029771B970057989F /* BankCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A2C1FAF329771C050057989F /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FAF429771C120057989F /* CityCell.swift */,
+				A2C1FAF529771C120057989F /* CityCell.xib */,
+			);
+			path = CityCell;
+			sourceTree = "<group>";
+		};
 		A2DCECD02970662100A5B216 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +142,7 @@
 		A2DCECDB2970662100A5B216 /* BankMap */ = {
 			isa = PBXGroup;
 			children = (
+				A2C1FAEE29771B770057989F /* Cells */,
 				A2C1FAE729770D7D0057989F /* ProfileController */,
 				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
 				A2DCECF829706E0C00A5B216 /* MapBankController */,
@@ -220,6 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */,
+				A2C1FAF729771C120057989F /* CityCell.xib in Resources */,
+				A2C1FAF229771B970057989F /* BankCell.xib in Resources */,
 				A2DCECE92970662300A5B216 /* LaunchScreen.storyboard in Resources */,
 				A2DCECFC29706E3800A5B216 /* BankLocationMapController.xib in Resources */,
 				A2DCECE62970662300A5B216 /* Assets.xcassets in Resources */,
@@ -295,10 +325,12 @@
 			files = (
 				A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */,
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
+				A2C1FAF629771C120057989F /* CityCell.swift in Sources */,
 				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,
 				A2DCECFB29706E3800A5B216 /* BankLocationMapController.swift in Sources */,
 				A2DCECF7297067C800A5B216 /* BankProvider.swift in Sources */,
+				A2C1FAF129771B970057989F /* BankCell.swift in Sources */,
 				A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */,
 				A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */,
 				A2DCECF5297067BE00A5B216 /* BankAPI.swift in Sources */,

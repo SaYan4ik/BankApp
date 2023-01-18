@@ -12,6 +12,7 @@ class BankModel: Mappable {
     var id: Int = 0
     var area: String = ""
     var addressType: String = ""
+    var city: String = ""
     var address: String = ""
     var numHouse: String = ""
     var gpsX: String = ""
@@ -27,6 +28,7 @@ class BankModel: Mappable {
         id              <- map["id"]
         area            <- map["area"]
         addressType     <- map["city_type"]
+        city            <- map["city"]
         address         <- map["address"]
         numHouse        <- map["house"]
         gpsX            <- map["gps_x"]

@@ -15,7 +15,7 @@ enum BankAPI {
 
 extension BankAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://belarusbank.by/api/atm")!
+        return URL(string: "https://belarusbank.by/api")!
     }
     
     var path: String {

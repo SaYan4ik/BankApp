@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 1)
 
         self.tabBar.barTintColor = UIColor(red: 62/255, green: 64/255, blue: 77/255, alpha: 1)
-        self.tabBar.tintColor = .white
+        self.tabBar.tintColor = .black
     }
     
 }
