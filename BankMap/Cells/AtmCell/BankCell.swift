@@ -24,6 +24,7 @@ class BankCell: UICollectionViewCell {
         container.layer.borderWidth = self.isSelected ? 2 : 0
         container.layer.borderColor = bankType.borderColor.cgColor
         container.backgroundColor = bankType.tintColor
+        container.layer.cornerRadius = 12
         bankCellLabel.text = bankType.rawValue
     }
 

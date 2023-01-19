@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		1728127309C3D682AD4B874E /* Pods_BankMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */; };
 		A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE529770BAD0057989F /* TabBarController.swift */; };
-		A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE829770D920057989F /* ProfileController.swift */; };
-		A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAE929770D920057989F /* ProfileController.xib */; };
 		A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEC297710CB0057989F /* FilialModel.swift */; };
 		A2C1FAF129771B970057989F /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEF29771B970057989F /* BankCell.swift */; };
 		A2C1FAF229771B970057989F /* BankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAF029771B970057989F /* BankCell.xib */; };
 		A2C1FAF629771C120057989F /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAF429771C120057989F /* CityCell.swift */; };
 		A2C1FAF729771C120057989F /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAF529771C120057989F /* CityCell.xib */; };
 		A2C1FAFA2977E1230057989F /* BankType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAF92977E1230057989F /* BankType.swift */; };
+		A2C1FAFD2979A21E0057989F /* GemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAFB2979A21E0057989F /* GemsController.swift */; };
+		A2C1FAFE2979A21E0057989F /* GemsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FAFC2979A21E0057989F /* GemsController.xib */; };
+		A2C1FB022979A2930057989F /* MetalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FB002979A2930057989F /* MetalsController.swift */; };
+		A2C1FB032979A2930057989F /* MetalsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FB012979A2930057989F /* MetalsController.xib */; };
+		A2C1FB082979A4120057989F /* GemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FB062979A4120057989F /* GemsCell.swift */; };
+		A2C1FB092979A4120057989F /* GemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FB072979A4120057989F /* GemsCell.xib */; };
 		A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDC2970662100A5B216 /* AppDelegate.swift */; };
 		A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDE2970662100A5B216 /* SceneDelegate.swift */; };
 		A2DCECE12970662100A5B216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECE02970662100A5B216 /* ViewController.swift */; };
@@ -35,14 +39,18 @@
 		6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D32020E73FBAE893F54E85E /* Pods-BankMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankMap.debug.xcconfig"; path = "Target Support Files/Pods-BankMap/Pods-BankMap.debug.xcconfig"; sourceTree = "<group>"; };
 		A2C1FAE529770BAD0057989F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A2C1FAE829770D920057989F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		A2C1FAE929770D920057989F /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
 		A2C1FAEC297710CB0057989F /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		A2C1FAEF29771B970057989F /* BankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
 		A2C1FAF029771B970057989F /* BankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCell.xib; sourceTree = "<group>"; };
 		A2C1FAF429771C120057989F /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		A2C1FAF529771C120057989F /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		A2C1FAF92977E1230057989F /* BankType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankType.swift; sourceTree = "<group>"; };
+		A2C1FAFB2979A21E0057989F /* GemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsController.swift; sourceTree = "<group>"; };
+		A2C1FAFC2979A21E0057989F /* GemsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GemsController.xib; sourceTree = "<group>"; };
+		A2C1FB002979A2930057989F /* MetalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalsController.swift; sourceTree = "<group>"; };
+		A2C1FB012979A2930057989F /* MetalsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetalsController.xib; sourceTree = "<group>"; };
+		A2C1FB062979A4120057989F /* GemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsCell.swift; sourceTree = "<group>"; };
+		A2C1FB072979A4120057989F /* GemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GemsCell.xib; sourceTree = "<group>"; };
 		A2DCECD92970662100A5B216 /* BankMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DCECDC2970662100A5B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2DCECDE2970662100A5B216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,21 +103,21 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		A2C1FAE729770D7D0057989F /* ProfileController */ = {
+		A2C1FAE729770D7D0057989F /* GemsController */ = {
 			isa = PBXGroup;
 			children = (
-				A2C1FAE829770D920057989F /* ProfileController.swift */,
-				A2C1FAE929770D920057989F /* ProfileController.xib */,
+				A2C1FAFB2979A21E0057989F /* GemsController.swift */,
+				A2C1FAFC2979A21E0057989F /* GemsController.xib */,
 			);
-			path = ProfileController;
+			path = GemsController;
 			sourceTree = "<group>";
 		};
 		A2C1FAEE29771B770057989F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A2C1FB052979A3FA0057989F /* GemsCell */,
+				A2C1FB042979A3EA0057989F /* AtmCell */,
 				A2C1FAF329771C050057989F /* CityCell */,
-				A2C1FAEF29771B970057989F /* BankCell.swift */,
-				A2C1FAF029771B970057989F /* BankCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -129,6 +137,33 @@
 				A2C1FAF92977E1230057989F /* BankType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A2C1FAFF2979A2710057989F /* MetalsController */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FB002979A2930057989F /* MetalsController.swift */,
+				A2C1FB012979A2930057989F /* MetalsController.xib */,
+			);
+			path = MetalsController;
+			sourceTree = "<group>";
+		};
+		A2C1FB042979A3EA0057989F /* AtmCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FAEF29771B970057989F /* BankCell.swift */,
+				A2C1FAF029771B970057989F /* BankCell.xib */,
+			);
+			path = AtmCell;
+			sourceTree = "<group>";
+		};
+		A2C1FB052979A3FA0057989F /* GemsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2C1FB062979A4120057989F /* GemsCell.swift */,
+				A2C1FB072979A4120057989F /* GemsCell.xib */,
+			);
+			path = GemsCell;
 			sourceTree = "<group>";
 		};
 		A2DCECD02970662100A5B216 = {
@@ -154,7 +189,8 @@
 			children = (
 				A2C1FAF82977E0B10057989F /* Enums */,
 				A2C1FAEE29771B770057989F /* Cells */,
-				A2C1FAE729770D7D0057989F /* ProfileController */,
+				A2C1FAE729770D7D0057989F /* GemsController */,
+				A2C1FAFF2979A2710057989F /* MetalsController */,
 				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
 				A2DCECF829706E0C00A5B216 /* MapBankController */,
 				A2DCECF1297067A000A5B216 /* Models */,
@@ -258,13 +294,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2C1FAEB29770D920057989F /* ProfileController.xib in Resources */,
 				A2C1FAF729771C120057989F /* CityCell.xib in Resources */,
 				A2C1FAF229771B970057989F /* BankCell.xib in Resources */,
+				A2C1FAFE2979A21E0057989F /* GemsController.xib in Resources */,
+				A2C1FB092979A4120057989F /* GemsCell.xib in Resources */,
 				A2DCECE92970662300A5B216 /* LaunchScreen.storyboard in Resources */,
 				A2DCECFC29706E3800A5B216 /* BankLocationMapController.xib in Resources */,
 				A2DCECE62970662300A5B216 /* Assets.xcassets in Resources */,
 				A2DCECE42970662100A5B216 /* Main.storyboard in Resources */,
+				A2C1FB032979A2930057989F /* MetalsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +373,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */,
+				A2C1FB082979A4120057989F /* GemsCell.swift in Sources */,
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
 				A2C1FAF629771C120057989F /* CityCell.swift in Sources */,
 				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,
+				A2C1FB022979A2930057989F /* MetalsController.swift in Sources */,
 				A2DCECFB29706E3800A5B216 /* BankLocationMapController.swift in Sources */,
 				A2DCECF7297067C800A5B216 /* BankProvider.swift in Sources */,
 				A2C1FAF129771B970057989F /* BankCell.swift in Sources */,
-				A2C1FAEA29770D920057989F /* ProfileController.swift in Sources */,
 				A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */,
 				A2C1FAFA2977E1230057989F /* BankType.swift in Sources */,
 				A2DCECF5297067BE00A5B216 /* BankAPI.swift in Sources */,
+				A2C1FAFD2979A21E0057989F /* GemsController.swift in Sources */,
 				A2DCECF3297067AF00A5B216 /* BankModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

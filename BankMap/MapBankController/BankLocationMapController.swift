@@ -181,6 +181,7 @@ extension BankLocationMapController: UICollectionViewDelegate {
             
             drawMarkersForBankCity(city: cityName[indexPath.item])
             drawMarkersForFilialCity(city: cityName[indexPath.item])
+            cityCollectionView.reloadData()
             
         } else if collectionView == atmBankCollectionView {
             self.selectedIndexPath = indexPath
@@ -199,10 +200,7 @@ extension BankLocationMapController: UICollectionViewDelegate {
                     mapView.clear()
                     drawMarkersForFilialCity(city: city)
                     drawMarkersForBankCity(city: city)
-//                    drawMarkerForATM()
-//                    drawMarkForFilial()
             }
-            
         }
     }
 }

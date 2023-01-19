@@ -18,12 +18,14 @@ class TabBarController: UITabBarController {
     private func configureTabBar() {
         
         let mapVC = BankLocationMapController(nibName: "BankLocationMapController", bundle: nil)
-        let profileVC = ProfileController(nibName: "ProfileController", bundle: nil)
-       
-        self.viewControllers = [mapVC,profileVC]
+        let gemVC = GemsController(nibName: "GemsController", bundle: nil)
+        let metalsVC = MetalsController(nibName: "MetalsController", bundle: nil)
+        
+        self.viewControllers = [mapVC, gemVC, metalsVC]
         
         mapVC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), tag: 0)
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 1)
+        gemVC.tabBarItem = UITabBarItem(title: "Gems", image: UIImage(systemName: "diamond.fill"), tag: 1)
+        metalsVC.tabBarItem = UITabBarItem(title: "Metals", image: UIImage(systemName: "stop.fill"), tag: 2)
 
         self.tabBar.barTintColor = UIColor(red: 62/255, green: 64/255, blue: 77/255, alpha: 1)
         self.tabBar.tintColor = .black

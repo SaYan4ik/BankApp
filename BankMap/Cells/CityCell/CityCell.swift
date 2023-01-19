@@ -22,6 +22,7 @@ class CityCell: UICollectionViewCell {
     
     func set(name: String) {
         cityLabel.text = name
+        container.layer.cornerRadius = 12
     }
 
 }
