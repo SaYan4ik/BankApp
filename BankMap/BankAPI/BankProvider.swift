@@ -39,9 +39,30 @@ final class GetBankInfo {
         }
     }
     
-    func getGemsInfo(city: String, complition: @escaping ([FilialModel]) -> Void, failure: (() -> Void)? = nil) {
-        
+    func getGemsInfo(city: String, complition: @escaping ([GemModel]) -> Void, failure: (() -> Void)? = nil) {
+        provider.request(.getGemsInfo(city: city)) { result in
+            switch result {
+                case .success(let response):
+                    guard let gems = try? response.mapArray(GemModel.self) else { return }
+                    complition(gems)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    failure?()
+            }
+        }
     }
     
+    func getMetalsInfo(city: String, complition: @escaping ([MetalModel]) -> Void, failure: (() -> Void)? = nil) {
+        provider.request(.getMetalsInfo(city: city)) { result in
+            switch result {
+                case .success(let response):
+                    guard let metals = try? response.mapArray(MetalModel.self) else { return }
+                    complition(metals)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    failure?()
+            }
+        }
+    }
     
 }
