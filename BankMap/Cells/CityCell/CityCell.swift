@@ -8,6 +8,9 @@
 import UIKit
 
 class CityCell: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var cityLabel: UILabel!
     
     static var id = String(describing: CityCell.self)

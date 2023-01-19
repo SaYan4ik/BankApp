@@ -46,7 +46,8 @@
             </constraints>
             <size key="customSize" width="201" height="50"/>
             <connections>
-                <outlet property="cityLabel" destination="a51-B8-rV9" id="FVt-lE-WSk"/>
+                <outlet property="cityLabel" destination="a51-B8-rV9" id="lJR-No-dPv"/>
+                <outlet property="container" destination="08Z-W4-gyl" id="hDa-aS-mEB"/>
             </connections>
             <point key="canvasLocation" x="253.07692307692307" y="20.616113744075829"/>
         </collectionViewCell>

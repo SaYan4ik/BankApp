@@ -8,7 +8,6 @@
 import UIKit
 import GoogleMaps
 
-
 class BankLocationMapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cityCollectionView: UICollectionView!
@@ -16,19 +15,22 @@ class BankLocationMapController: UIViewController {
     
     private var data = [BankModel]() {
         didSet {
-            drawMarkerForATM()
+//            drawMarkerForATM()
         }
     }
     
     private var filials = [FilialModel]() {
         didSet {
-            drawMarkForFilial()
+//            drawMarkForFilial()
         }
     }
     
     private var cityName = [String]()
     private var bankAtmType = BankType.allCases
     private var selectedIndexPath = IndexPath(row: 0, section: 0)
+    private var city: String = ""
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ class BankLocationMapController: UIViewController {
         cityCollectionView.delegate = self
         atmBankCollectionView.dataSource = self
         atmBankCollectionView.delegate = self
+        
+        cityCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        atmBankCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+
     }
     
     private func registrationCell() {
@@ -56,7 +62,9 @@ class BankLocationMapController: UIViewController {
             self.data = banks
             
             banks.forEach { bank in
-                city.append(bank.city)
+                if bank.addressType == "г." {
+                    city.append(bank.city)
+                }
             }
             
             self.cityName = Array(Set(city))
@@ -118,6 +126,8 @@ class BankLocationMapController: UIViewController {
         mark.title = bank.addressType + bank.address + bank.numHouse
         mark.snippet = " Время работы \(bank.warkTime)"
         mark.icon = GMSMarker.markerImage(with: .orange)
+        let camera = GMSCameraPosition(latitude: Double(bank.gpsX) ?? 0.0, longitude: Double(bank.gpsY) ?? 0.0, zoom: 8)
+        mapView.animate(to: camera)
         mapView.selectedMarker = mark
         mapView.selectedMarker = nil
     }
@@ -129,6 +139,8 @@ class BankLocationMapController: UIViewController {
         mark.map = mapView
         mark.title = "Филиал \(String(describing: filial.filialName))"
         mark.icon = GMSMarker.markerImage(with: .red)
+        let camera = GMSCameraPosition(latitude: Double(gpsX) ?? 0.0, longitude: Double(gpsY) ?? 0.0, zoom: 8)
+        mapView.animate(to: camera)
         mapView.selectedMarker = mark
         mapView.selectedMarker = nil
     }
@@ -164,7 +176,9 @@ extension BankLocationMapController: UICollectionViewDataSource {
 extension BankLocationMapController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityCollectionView {
+            city = cityName[indexPath.item]
             mapView.clear()
+            
             drawMarkersForBankCity(city: cityName[indexPath.item])
             drawMarkersForFilialCity(city: cityName[indexPath.item])
             
@@ -177,16 +191,28 @@ extension BankLocationMapController: UICollectionViewDelegate {
             switch selectedItem {
                 case .bank:
                     mapView.clear()
-                    drawMarkForFilial()
+                    drawMarkersForFilialCity(city: city)
                 case .atm:
                     mapView.clear()
-                    drawMarkerForATM()
+                    drawMarkersForBankCity(city: city)
                 case .all:
                     mapView.clear()
-                    drawMarkerForATM()
-                    drawMarkForFilial()
+                    drawMarkersForFilialCity(city: city)
+                    drawMarkersForBankCity(city: city)
+//                    drawMarkerForATM()
+//                    drawMarkForFilial()
             }
             
         }
+    }
+}
+
+extension BankLocationMapController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let inset = 16.0
+        guard let screen = view.window?.windowScene?.screen else { return .zero }
+        let cellCount = 2.0
+        let width = (screen.bounds.width - (inset * (cellCount + 1))) / cellCount
+        return CGSize(width: width, height: width)
     }
 }
