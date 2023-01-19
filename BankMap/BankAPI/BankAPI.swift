@@ -11,6 +11,8 @@ import Moya
 enum BankAPI {
     case getBankInfo(city: String)
     case getFilialInfo(city: String)
+    case getGemsInfo(city: String)
+    case getMetalsInfo(city: String)
 }
 
 extension BankAPI: TargetType {
@@ -24,6 +26,10 @@ extension BankAPI: TargetType {
                 return "/atm"
             case .getFilialInfo:
                 return "/filials_info"
+            case .getGemsInfo:
+                return "/getgems"
+            case .getMetalsInfo:
+                return "/getinfodrall"
         }
     }
     
@@ -32,6 +38,10 @@ extension BankAPI: TargetType {
             case .getBankInfo:
                 return .get
             case .getFilialInfo:
+                return .get
+            case .getGemsInfo:
+                return .get
+            case .getMetalsInfo:
                 return .get
         }
     }
@@ -58,6 +68,10 @@ extension BankAPI: TargetType {
                 params["city"] = city
             case .getFilialInfo(let city):
                 params["city"] = city
+            case .getGemsInfo(let city):
+                params["city"] = city
+            case .getMetalsInfo(let city):
+                params["city"] = city
         }
         return params
     }
@@ -67,6 +81,10 @@ extension BankAPI: TargetType {
             case .getBankInfo:
                 return URLEncoding.queryString
             case .getFilialInfo:
+                return URLEncoding.queryString
+            case .getGemsInfo:
+                return URLEncoding.queryString
+            case .getMetalsInfo:
                 return URLEncoding.queryString
         }
     }
