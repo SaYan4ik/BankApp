@@ -21,6 +21,8 @@
 		A2C1FB032979A2930057989F /* MetalsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FB012979A2930057989F /* MetalsController.xib */; };
 		A2C1FB082979A4120057989F /* GemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FB062979A4120057989F /* GemsCell.swift */; };
 		A2C1FB092979A4120057989F /* GemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C1FB072979A4120057989F /* GemsCell.xib */; };
+		A2C1FB0B2979A7A20057989F /* GemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FB0A2979A7A20057989F /* GemModel.swift */; };
+		A2C1FB0D2979A9090057989F /* MetalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FB0C2979A9090057989F /* MetalModel.swift */; };
 		A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDC2970662100A5B216 /* AppDelegate.swift */; };
 		A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECDE2970662100A5B216 /* SceneDelegate.swift */; };
 		A2DCECE12970662100A5B216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DCECE02970662100A5B216 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 		A2C1FB012979A2930057989F /* MetalsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetalsController.xib; sourceTree = "<group>"; };
 		A2C1FB062979A4120057989F /* GemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsCell.swift; sourceTree = "<group>"; };
 		A2C1FB072979A4120057989F /* GemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GemsCell.xib; sourceTree = "<group>"; };
+		A2C1FB0A2979A7A20057989F /* GemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModel.swift; sourceTree = "<group>"; };
+		A2C1FB0C2979A9090057989F /* MetalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalModel.swift; sourceTree = "<group>"; };
 		A2DCECD92970662100A5B216 /* BankMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DCECDC2970662100A5B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2DCECDE2970662100A5B216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 			children = (
 				A2DCECF2297067AF00A5B216 /* BankModel.swift */,
 				A2C1FAEC297710CB0057989F /* FilialModel.swift */,
+				A2C1FB0A2979A7A20057989F /* GemModel.swift */,
+				A2C1FB0C2979A9090057989F /* MetalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,9 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C1FB0D2979A9090057989F /* MetalModel.swift in Sources */,
 				A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */,
 				A2C1FB082979A4120057989F /* GemsCell.swift in Sources */,
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
+				A2C1FB0B2979A7A20057989F /* GemModel.swift in Sources */,
 				A2C1FAF629771C120057989F /* CityCell.swift in Sources */,
 				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,

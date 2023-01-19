@@ -39,4 +39,9 @@ final class GetBankInfo {
         }
     }
     
+    func getGemsInfo(city: String, complition: @escaping ([FilialModel]) -> Void, failure: (() -> Void)? = nil) {
+        
+    }
+    
+    
 }
