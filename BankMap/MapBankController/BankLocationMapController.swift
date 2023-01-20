@@ -184,7 +184,6 @@ extension BankLocationMapController: UICollectionViewDelegate {
             cityCollectionView.reloadData()
             
         } else if collectionView == atmBankCollectionView {
-            self.selectedIndexPath = indexPath
             self.atmBankCollectionView.reloadData()
              
             let selectedItem = bankAtmType[indexPath.row]
