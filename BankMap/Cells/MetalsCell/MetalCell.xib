@@ -20,31 +20,25 @@
                         <rect key="frame" x="16" y="5" width="330" height="175"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IRs-n6-yEc">
-                                <rect key="frame" x="0.0" y="0.0" width="330" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="330" height="131.33333333333334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ugj-Ac-caY">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="131.33333333333334"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEr-X7-yV2">
-                                                <rect key="frame" x="141" y="0.0" width="48" height="35"/>
-                                                <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-Ad-idH">
-                                                <rect key="frame" x="141" y="35" width="48" height="35"/>
+                                                <rect key="frame" x="141" y="0.0" width="48" height="43.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSU-5G-aWc">
-                                                <rect key="frame" x="141" y="70" width="48" height="35"/>
+                                                <rect key="frame" x="141" y="43.666666666666657" width="48" height="44"/>
                                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcR-WZ-QwV">
-                                                <rect key="frame" x="141" y="105" width="48" height="35"/>
+                                                <rect key="frame" x="141" y="87.666666666666671" width="48" height="43.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -55,13 +49,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIr-UN-aFV">
-                                <rect key="frame" x="0.0" y="140" width="330" height="35"/>
+                                <rect key="frame" x="0.0" y="131.33333333333334" width="330" height="43.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.32560309339999999" green="0.33853795040000001" blue="0.4152230241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61886934670000004" green="0.64345445239999999" blue="0.78920872330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="7vU-Wm-hPY"/>
                         </constraints>
@@ -79,7 +73,6 @@
             <connections>
                 <outlet property="bankNameLabel" destination="gIr-UN-aFV" id="Gbd-oz-dkO"/>
                 <outlet property="container" destination="GdI-sd-SdN" id="0ix-ii-gR5"/>
-                <outlet property="metalTypeLabel" destination="GEr-X7-yV2" id="4nD-EW-8vG"/>
                 <outlet property="weightFiftyLabel" destination="fcR-WZ-QwV" id="NWJ-Fp-Yg0"/>
                 <outlet property="weightTenLabel" destination="mlo-Ad-idH" id="OGY-HG-CZM"/>
                 <outlet property="weightTwentyLabel" destination="CSU-5G-aWc" id="zc1-Yk-0eW"/>

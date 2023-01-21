@@ -12,23 +12,38 @@ class MetalsController: UIViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     
     private var metalsData = [MetalModel]()
-    private var metalType = MetalType.allCases
+    private var filterMetals = [MetalModel]()
+    
+    private var metalType: MetalType = .gold
     private var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         getMetalInfo()
         registerCell()
+        tableView.dataSource = self
     }
     
     @IBAction func segmentDidChange(_ sender: Any) {
         guard segment.selectedSegmentIndex < 3 else { return }
         self.selectedIndex = segment.selectedSegmentIndex
+        
+        switch selectedIndex {
+            case 0:
+                filterByGold()
+                metalType = .gold
+            case 1:
+                filterBySilver()
+                metalType = .silver
+            case 2:
+                filterByPlatinum()
+                metalType = .platinum
+            default:
+                break
+        }
+        
         self.tableView.reloadData()
     }
-    
-    
     
     private func registerCell() {
         let nib = UINib(nibName: MetalCell.id, bundle: nil)
@@ -39,38 +54,115 @@ class MetalsController: UIViewController {
         GetBankInfo().getMetalsInfo(city: "") { [weak self] metals in
             guard let self else { return }
             self.metalsData = metals
+            self.filterByGold()
             self.tableView.reloadData()
         }
     }
     
+    private func filterByGold() {
+        filterMetals.removeAll()
+        metalsData.forEach { metal in
+            guard let goldTenDouble = Double(metal.goldTen),
+                  let goldTwentyDouble = Double(metal.goldTwenty),
+                  let goldFiftyDouble = Double(metal.goldFifty)
+            else { return }
+            
+            if goldTenDouble <= 0.00, goldTwentyDouble <= 0.00, goldFiftyDouble <= 0.00 {
+                print("nothing to add")
+            } else {
+                filterMetals.append(metal)
+            }
+            
+        }
+    }
+    
+    private func filterBySilver() {
+        filterMetals.removeAll()
+        metalsData.forEach { metal in
+            guard let silverTenDouble = Double(metal.silverTen),
+                  let silverTwentyDouble = Double(metal.silverTwenty),
+                  let silverFiftyDouble = Double(metal.silverFifty)
+            else { return }
+            
+            if silverTenDouble <= 0.00,silverTwentyDouble <= 0.00, silverFiftyDouble <= 0.00 {
+                print("nothing to add")
+            } else {
+                filterMetals.append(metal)
+            }
+            
+        }
+    }
+    
+    private func filterByPlatinum() {
+        filterMetals.removeAll()
+        metalsData.forEach { metal in
+            guard let platinumTenDouble = Double(metal.platinumTen),
+                  let platinumTwentyDouble = Double(metal.platinumTwenty),
+                  let platinumFiftyDouble = Double(metal.platinumFifty)
+            else { return }
+            
+            if platinumTenDouble <= 0.00, platinumTwentyDouble <= 0.00, platinumFiftyDouble <= 0.00 {
+                print("nothing to add")
+            } else {
+                filterMetals.append(metal)
+            }
+        }
+    }
+
+    private func filterGoldData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
+        guard let goldTenDouble = Double(metal.goldTen),
+              let goldTwentyDouble = Double(metal.goldTwenty),
+              let goldFiftyDouble = Double(metal.goldFifty)
+        else { return }
+
+        if goldTenDouble <= 0.00, goldTwentyDouble <= 0.00, goldFiftyDouble <= 0.00 {
+            metalsData.remove(at: index)
+            tableView.reloadData()
+            return
+        }
+        complition(metal)
+    }
+    
+    
+    private func filterSilverData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
+        guard let silverTenDouble = Double(metal.silverTen),
+              let silverTwentyDouble = Double(metal.silverTwenty),
+              let silverFiftyDouble = Double(metal.silverFifty)
+        else { return }
+        
+        if silverTenDouble <= 0.00,silverTwentyDouble <= 0.00, silverFiftyDouble <= 0.00 {
+            metalsData.remove(at: index)
+            tableView.reloadData()
+        } else {
+            complition(metal)
+        }
+    }
+    
+    private func filterPlatinumData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
+        guard let platinumTenDouble = Double(metal.platinumTen),
+              let platinumTwentyDouble = Double(metal.platinumTwenty),
+              let platinumFiftyDouble = Double(metal.platinumFifty)
+        else { return }
+        
+        if platinumTenDouble <= 0.00, platinumTwentyDouble <= 0.00, platinumFiftyDouble <= 0.00 {
+            metalsData.remove(at: index)
+            tableView.reloadData()
+        } else {
+            complition(metal)
+        }
+    }
     
 }
-
+    
 extension MetalsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return metalsData.count
+        return filterMetals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MetalCell.id, for: indexPath)
-        
         guard let metalCell = cell as? MetalCell else { return cell }
-
-        switch selectedIndex {
-            case 0:
-                metalCell.set(metal: metalsData[indexPath.row], metalType: .gold)
-                return metalCell
-            case 1:
-                metalCell.set(metal: metalsData[indexPath.row], metalType: .silver)
-                return metalCell
-            case 2:
-                metalCell.set(metal: metalsData[indexPath.row], metalType: .platinum)
-                return metalCell
-            default:
-                return metalCell
-        }
-//        return metalCell
+        metalCell.set(metal: filterMetals[indexPath.row], metalType: metalType)
+        return metalCell
     }
-    
-    
 }
