@@ -13,6 +13,7 @@ final class GetBankInfo {
     private let provider = MoyaProvider<BankAPI>(plugins: [NetworkLoggerPlugin()])
     
     func getInfo(city: String, complition: @escaping ([BankModel]) -> Void, failure: (() -> Void)? = nil) {
+        
         provider.request(.getBankInfo(city: city)) { result in
             switch result {
                 case .success(let response):

@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,6 +14,7 @@
                 <outlet property="atmBankCollectionView" destination="hyw-mh-UWY" id="BNe-16-B4n"/>
                 <outlet property="cityCollectionView" destination="9oc-bs-Dr3" id="vMy-Va-DHh"/>
                 <outlet property="mapView" destination="lr1-bn-OeS" id="3a2-4D-MPw"/>
+                <outlet property="spinner" destination="3cn-sE-w0H" id="LGu-cB-H3N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-bn-OeS" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9oc-bs-Dr3">
@@ -51,25 +53,45 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-RL-8k3">
+                    <rect key="frame" x="312" y="77" width="48" height="34.333333333333343"/>
+                    <color key="tintColor" red="0.32560309339999999" green="0.33853795040000001" blue="0.4152230241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="myLocationButtonDidTap:" destination="-1" eventType="touchUpInside" id="WY6-vY-ZMg"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3cn-sE-w0H">
+                    <rect key="frame" x="176.66666666666666" y="410" width="37" height="37"/>
+                    <color key="color" red="0.26993167967117376" green="0.7227149701395722" blue="0.38706860088209177" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.48378898799999998" green="0.5030079127" blue="0.61694845860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="lr1-bn-OeS" secondAttribute="bottom" id="GIN-ot-1Lo"/>
+                <constraint firstItem="3cn-sE-w0H" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8RG-ge-JM7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GSf-RL-8k3" secondAttribute="trailing" constant="30" id="BJv-QV-A1D"/>
                 <constraint firstItem="lr1-bn-OeS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="H4w-fm-Akp"/>
                 <constraint firstItem="9oc-bs-Dr3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="H69-rI-EGm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hyw-mh-UWY" secondAttribute="trailing" id="OMS-WN-PRS"/>
+                <constraint firstItem="3cn-sE-w0H" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Tpb-Sn-NXA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lr1-bn-OeS" secondAttribute="trailing" id="ar9-wr-3Ze"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9oc-bs-Dr3" secondAttribute="trailing" id="eEG-Qm-64D"/>
                 <constraint firstItem="hyw-mh-UWY" firstAttribute="top" secondItem="9oc-bs-Dr3" secondAttribute="bottom" constant="16" id="kOE-0f-DVf"/>
                 <constraint firstItem="hyw-mh-UWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nb5-89-ueX"/>
+                <constraint firstItem="lr1-bn-OeS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="qw2-4x-6i7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hyw-mh-UWY" secondAttribute="bottom" id="ugm-oS-QD7"/>
                 <constraint firstItem="lr1-bn-OeS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wBo-SR-PDj"/>
+                <constraint firstItem="GSf-RL-8k3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="xQq-SS-NZH"/>
             </constraints>
             <point key="canvasLocation" x="136.92307692307691" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
