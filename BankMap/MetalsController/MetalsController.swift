@@ -108,49 +108,6 @@ class MetalsController: UIViewController {
             }
         }
     }
-
-    private func filterGoldData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
-        guard let goldTenDouble = Double(metal.goldTen),
-              let goldTwentyDouble = Double(metal.goldTwenty),
-              let goldFiftyDouble = Double(metal.goldFifty)
-        else { return }
-
-        if goldTenDouble <= 0.00, goldTwentyDouble <= 0.00, goldFiftyDouble <= 0.00 {
-            metalsData.remove(at: index)
-            tableView.reloadData()
-            return
-        }
-        complition(metal)
-    }
-    
-    
-    private func filterSilverData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
-        guard let silverTenDouble = Double(metal.silverTen),
-              let silverTwentyDouble = Double(metal.silverTwenty),
-              let silverFiftyDouble = Double(metal.silverFifty)
-        else { return }
-        
-        if silverTenDouble <= 0.00,silverTwentyDouble <= 0.00, silverFiftyDouble <= 0.00 {
-            metalsData.remove(at: index)
-            tableView.reloadData()
-        } else {
-            complition(metal)
-        }
-    }
-    
-    private func filterPlatinumData(metal: MetalModel, index: Int, complition: @escaping (MetalModel) -> Void) {
-        guard let platinumTenDouble = Double(metal.platinumTen),
-              let platinumTwentyDouble = Double(metal.platinumTwenty),
-              let platinumFiftyDouble = Double(metal.platinumFifty)
-        else { return }
-        
-        if platinumTenDouble <= 0.00, platinumTwentyDouble <= 0.00, platinumFiftyDouble <= 0.00 {
-            metalsData.remove(at: index)
-            tableView.reloadData()
-        } else {
-            complition(metal)
-        }
-    }
     
 }
     
