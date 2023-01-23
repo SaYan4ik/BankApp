@@ -10,8 +10,10 @@ import UIKit
 class GemsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spiner: UIActivityIndicatorView!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     private var gemsData = [GemModel]()
+    private var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +23,29 @@ class GemsController: UIViewController {
 
     }
     
+    
+    @IBAction func segmentControllerDidChange(_ sender: Any) {
+        guard segment.selectedSegmentIndex < 2 else { return }
+        self.selectedIndex = segment.selectedSegmentIndex
+        
+        switch selectedIndex {
+            case 0:
+                gemsData = gemsData.sorted(by: {$0.cost < $1.cost})
+            case 1:
+                gemsData = gemsData.sorted(by: {$0.cost > $1.cost})
+            default:
+                break
+        }
+        tableView.reloadData()
+    }
+    
+    
+    
     private func getGemData() {
         spiner.startAnimating()
         GetBankInfo().getGemsInfo(city: "") { [weak self] gems in
             guard let self else { return }
-            self.gemsData = gems
+            self.gemsData = gems.sorted(by: {$0.cost < $1.cost})
             self.tableView.reloadData()
             self.spiner.stopAnimating()
         }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GemsController" customModule="BankMap" customModuleProvider="target">
             <connections>
+                <outlet property="segment" destination="GMW-mS-X3J" id="KB2-6O-PJ6"/>
                 <outlet property="spiner" destination="eft-pg-2Dk" id="0IJ-EV-ZmS"/>
                 <outlet property="tableView" destination="6sB-cR-X45" id="050-Pe-qsZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,23 +22,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6sB-cR-X45">
-                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <rect key="frame" x="0.0" y="78" width="390" height="732"/>
                     <color key="backgroundColor" red="0.15686275059999999" green="0.1647058874" blue="0.2117646933" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="eft-pg-2Dk">
                     <rect key="frame" x="0.0" y="412" width="390" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GMW-mS-X3J">
+                    <rect key="frame" x="0.0" y="47" width="390" height="32"/>
+                    <segments>
+                        <segment title="Price: low -&gt; heigh"/>
+                        <segment title="Price: Heigh -&gt; low"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentControllerDidChange:" destination="-1" eventType="valueChanged" id="fkf-af-Hbv"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="6sB-cR-X45" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Dr8-YC-6kf"/>
+                <constraint firstItem="GMW-mS-X3J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bUM-VY-5qc"/>
+                <constraint firstItem="GMW-mS-X3J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cHk-DJ-zDh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GMW-mS-X3J" secondAttribute="trailing" id="ifB-ub-5xe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6sB-cR-X45" secondAttribute="bottom" id="ix7-hP-EAO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6sB-cR-X45" secondAttribute="trailing" id="lq0-BD-4sz"/>
                 <constraint firstItem="6sB-cR-X45" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mli-kC-WUW"/>
+                <constraint firstItem="6sB-cR-X45" firstAttribute="top" secondItem="GMW-mS-X3J" secondAttribute="bottom" id="ygL-8H-FyV"/>
             </constraints>
-            <point key="canvasLocation" x="118" y="21"/>
+            <point key="canvasLocation" x="116.92307692307692" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>

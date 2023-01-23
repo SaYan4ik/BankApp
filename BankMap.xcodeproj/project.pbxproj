@@ -105,6 +105,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A29FA6F4297E80C4009A20BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
+				A2DCECF829706E0C00A5B216 /* MapBankController */,
+				A2C1FAFF2979A2710057989F /* MetalsController */,
+				A2C1FAE729770D7D0057989F /* GemsController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A2A51BBD29770B3C00B9DB92 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,12 +219,9 @@
 		A2DCECDB2970662100A5B216 /* BankMap */ = {
 			isa = PBXGroup;
 			children = (
+				A29FA6F4297E80C4009A20BD /* Controllers */,
 				A2C1FAF82977E0B10057989F /* Enums */,
 				A2C1FAEE29771B770057989F /* Cells */,
-				A2C1FAE729770D7D0057989F /* GemsController */,
-				A2C1FAFF2979A2710057989F /* MetalsController */,
-				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
-				A2DCECF829706E0C00A5B216 /* MapBankController */,
 				A2DCECF1297067A000A5B216 /* Models */,
 				A2DCECF02970671A00A5B216 /* BankAPI */,
 				A2DCECDC2970662100A5B216 /* AppDelegate.swift */,

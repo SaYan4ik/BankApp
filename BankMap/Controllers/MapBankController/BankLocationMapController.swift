@@ -25,7 +25,11 @@ class BankLocationMapController: UIViewController {
         }
     }
     
-    private var cityName = [String]()
+    private var cityName = [String]() {
+        didSet {
+            cityName = cityName.sorted(by: {$0 < $1})
+        }
+    }
     private var bankAtmType = BankType.allCases
     private var selectedIndexPath = IndexPath(row: 0, section: 0)
     private var city: String = ""
@@ -41,7 +45,7 @@ class BankLocationMapController: UIViewController {
         cityCollectionView.delegate = self
         atmBankCollectionView.dataSource = self
         atmBankCollectionView.delegate = self
-        
+    
         cityCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         atmBankCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
@@ -59,7 +63,7 @@ class BankLocationMapController: UIViewController {
         var city = [String]()
         
         GetBankInfo().getInfo(city: "") { banks in
-            self.data = banks
+            self.data = banks.sorted {$0.city < $1.city} 
             
             banks.forEach { bank in
                 if bank.addressType == "г." {
@@ -161,6 +165,7 @@ extension BankLocationMapController: UICollectionViewDataSource {
             let cell = cityCollectionView.dequeueReusableCell(withReuseIdentifier: CityCell.id, for: indexPath)
             guard let cityCell = cell as? CityCell else { return cell }
             cityCell.set(name: cityName[indexPath.item])
+            
             return cityCell
         } else {
             let cell = atmBankCollectionView.dequeueReusableCell(withReuseIdentifier: BankCell.id, for: indexPath)
@@ -206,10 +211,10 @@ extension BankLocationMapController: UICollectionViewDelegate {
 
 extension BankLocationMapController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let inset = 16.0
+        let inset = 6.0
         guard let screen = view.window?.windowScene?.screen else { return .zero }
-        let cellCount = 2.0
-        let width = (screen.bounds.width - (inset * (cellCount + 1))) / cellCount
-        return CGSize(width: width, height: width)
+        
+        let width = (screen.bounds.width - (inset * (6))) / 3
+        return CGSize(width: width, height: 40)
     }
 }

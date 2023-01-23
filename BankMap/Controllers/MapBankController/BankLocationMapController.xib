@@ -25,26 +25,26 @@
                     <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9oc-bs-Dr3">
-                    <rect key="frame" x="0.0" y="710" width="390" height="50"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9oc-bs-Dr3">
+                    <rect key="frame" x="0.0" y="694" width="390" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="bi3-Bt-81R"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Fg-U4-A8F">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sv-fP-SlY">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-mh-UWY">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-mh-UWY">
                     <rect key="frame" x="0.0" y="760" width="390" height="50"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="euP-71-jK3"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j9a-sS-0Ns">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GWM-oi-gyG">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -61,7 +61,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hyw-mh-UWY" secondAttribute="trailing" id="OMS-WN-PRS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lr1-bn-OeS" secondAttribute="trailing" id="ar9-wr-3Ze"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9oc-bs-Dr3" secondAttribute="trailing" id="eEG-Qm-64D"/>
-                <constraint firstItem="hyw-mh-UWY" firstAttribute="top" secondItem="9oc-bs-Dr3" secondAttribute="bottom" id="kOE-0f-DVf"/>
+                <constraint firstItem="hyw-mh-UWY" firstAttribute="top" secondItem="9oc-bs-Dr3" secondAttribute="bottom" constant="16" id="kOE-0f-DVf"/>
                 <constraint firstItem="hyw-mh-UWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nb5-89-ueX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hyw-mh-UWY" secondAttribute="bottom" id="ugm-oS-QD7"/>
                 <constraint firstItem="lr1-bn-OeS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wBo-SR-PDj"/>
