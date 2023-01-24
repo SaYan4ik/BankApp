@@ -15,16 +15,25 @@ final class GetBankInfo {
     func getInfo(city: String, complition: @escaping ([BankModel]) -> Void, failure: (() -> Void)? = nil) {
         
         provider.request(.getBankInfo(city: city)) { result in
+            
             switch result {
                 case .success(let response):
                     guard let bank = try? response.mapArray(BankModel.self) else { return }
-                    let respCode = response.response?.statusCode
-                    let request = HistoryRealmModel(date: Date.now, statusCode: respCode ?? 0)
-                    request.requestEnum = .getCoordAtm
+                    
+                    let requestType = RequestType.getCoordFilials.rawValue
+                    
+                    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
                     RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     complition(bank)
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
+                    
+                    let requestType = RequestType.getCoordFilials.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: error.errorCode, requestHist: requestType)
+                    RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     failure?()
             }
         }
@@ -35,13 +44,20 @@ final class GetBankInfo {
             switch result {
                 case .success(let response):
                     guard let filial = try? response.mapArray(FilialModel.self) else { return }
-                    let respCode = response.response?.statusCode
-                    let request = HistoryRealmModel(date: Date.now, statusCode: respCode ?? 0)
-                    request.requestEnum = .getCoordFilials
+                    
+                    let requestType = RequestType.getCoordAtm.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
+
                     RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     complition(filial)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    
+                    let requestType = RequestType.getCoordFilials.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: error.errorCode, requestHist: requestType)
+                    RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     failure?()
             }
         }
@@ -52,13 +68,19 @@ final class GetBankInfo {
             switch result {
                 case .success(let response):
                     guard let gems = try? response.mapArray(GemModel.self) else { return }
-                    let respCode = response.response?.statusCode
-                    let request = HistoryRealmModel(date: Date.now, statusCode: respCode ?? 0)
-                    request.requestEnum = .getInfoGems
+                    
+                    let requestType = RequestType.getInfoGems.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
                     RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     complition(gems)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    
+                    let requestType = RequestType.getInfoGems.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: error.errorCode, requestHist: requestType)
+                    RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     failure?()
             }
         }
@@ -69,13 +91,20 @@ final class GetBankInfo {
             switch result {
                 case .success(let response):
                     guard let metals = try? response.mapArray(MetalModel.self) else { return }
-                    let respCode = response.response?.statusCode
-                    let request = HistoryRealmModel(date: Date.now, statusCode: respCode ?? 0)
-                    request.requestEnum = .getInfoMetals
+                    
+                    let requestType = RequestType.getInfoMetals.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
                     RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     complition(metals)
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
+                    
+                    let requestType = RequestType.getInfoMetals.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: error.errorCode, requestHist: requestType)
+                    RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     failure?()
             }
         }
@@ -86,13 +115,19 @@ final class GetBankInfo {
             switch result {
                 case .success(let response):
                     guard let news = try? response.mapArray(NewsModel.self) else { return }
-                    let respCode = response.response?.statusCode
-                    let request = HistoryRealmModel(date: Date.now, statusCode: respCode ?? 0)
-                    request.requestEnum = .getNews
+                    
+                    let requestType = RequestType.getNews.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
                     RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     complition(news)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    
+                    let requestType = RequestType.getNews.rawValue
+                    let request = HistoryRealmModel(date: Date.now, statusCode: error.errorCode, requestHist: requestType)
+                    RealmManager<HistoryRealmModel>().write(object: request)
+                    
                     failure?()
             }
         }

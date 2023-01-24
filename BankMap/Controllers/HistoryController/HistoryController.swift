@@ -22,6 +22,10 @@ class HistoryController: UIViewController {
         registerCell()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     private func registerCell() {
         let nib = UINib(nibName: HistoryCell.id, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: HistoryCell.id)

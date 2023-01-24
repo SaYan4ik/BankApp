@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetalsController" customModule="BankMap" customModuleProvider="target">
             <connections>
+                <outlet property="noDataView" destination="SqA-1Q-7Xt" id="dRY-Ud-9Aa"/>
+                <outlet property="noViewImage" destination="bgM-JA-24L" id="ITR-ew-AMY"/>
                 <outlet property="segment" destination="gII-gB-mGV" id="2rt-IG-PgP"/>
                 <outlet property="tableView" destination="eal-Vq-b8i" id="fz0-hj-kWE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -34,6 +36,33 @@
                         <action selector="segmentDidChange:" destination="-1" eventType="valueChanged" id="GYk-QX-xjQ"/>
                     </connections>
                 </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-1Q-7Xt">
+                    <rect key="frame" x="0.0" y="78" width="390" height="732"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.hexagongrid.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-JA-24L">
+                            <rect key="frame" x="95" y="267.33333333333331" width="200" height="197.66666666666669"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="Crr-fE-KeT"/>
+                                <constraint firstAttribute="height" constant="200" id="R1e-e3-RiE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No metals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34o-zB-BZU">
+                            <rect key="frame" x="16" y="482" width="358" height="21"/>
+                            <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bgM-JA-24L" firstAttribute="centerY" secondItem="SqA-1Q-7Xt" secondAttribute="centerY" id="FrE-3L-IKd"/>
+                        <constraint firstAttribute="trailing" secondItem="34o-zB-BZU" secondAttribute="trailing" constant="16" id="T1b-B8-dkf"/>
+                        <constraint firstItem="34o-zB-BZU" firstAttribute="leading" secondItem="SqA-1Q-7Xt" secondAttribute="leading" constant="16" id="Z5y-UH-d4t"/>
+                        <constraint firstItem="34o-zB-BZU" firstAttribute="top" secondItem="bgM-JA-24L" secondAttribute="bottom" constant="16" id="f5r-iz-KZ6"/>
+                        <constraint firstItem="bgM-JA-24L" firstAttribute="centerX" secondItem="SqA-1Q-7Xt" secondAttribute="centerX" id="p0c-qu-WlR"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.32560309339999999" green="0.33853795040000001" blue="0.4152230241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,12 +70,19 @@
                 <constraint firstItem="eal-Vq-b8i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AFB-si-c05"/>
                 <constraint firstItem="eal-Vq-b8i" firstAttribute="top" secondItem="gII-gB-mGV" secondAttribute="bottom" id="DgB-W3-VQz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eal-Vq-b8i" secondAttribute="trailing" id="EQm-GF-HyL"/>
+                <constraint firstItem="SqA-1Q-7Xt" firstAttribute="top" secondItem="gII-gB-mGV" secondAttribute="bottom" id="G0r-bq-JEc"/>
                 <constraint firstItem="gII-gB-mGV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JWV-Ga-jD9"/>
+                <constraint firstItem="SqA-1Q-7Xt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="M8D-MC-Koc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eal-Vq-b8i" secondAttribute="bottom" id="dna-41-jWp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gII-gB-mGV" secondAttribute="trailing" id="gDx-zd-GRe"/>
                 <constraint firstItem="gII-gB-mGV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sI2-OK-bcG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SqA-1Q-7Xt" secondAttribute="trailing" id="vbO-ec-1Sr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SqA-1Q-7Xt" secondAttribute="bottom" id="wKy-Kl-lcQ"/>
             </constraints>
             <point key="canvasLocation" x="112.30769230769231" y="20.616113744075829"/>
         </view>
     </objects>
+    <resources>
+        <image name="circle.hexagongrid.fill" catalog="system" width="128" height="115"/>
+    </resources>
 </document>

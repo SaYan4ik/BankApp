@@ -21,7 +21,7 @@ class HistoryCell: UITableViewCell {
     }
     
     func set(request: HistoryRealmModel) {
-        self.requestHistoreyLabel.text = request.request
+        self.requestHistoreyLabel.text = request.requestHist
         self.statusCodeLabel.text = "Status code: " + String(request.statusCode)
         self.dateLabel.text = "Date of request \(request.date.formatted())"
         self.container.layer.cornerRadius = 12
