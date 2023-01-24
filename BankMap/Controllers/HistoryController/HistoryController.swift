@@ -10,19 +10,22 @@ import UIKit
 class HistoryController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var historyData = RealmManager<HistoryRealmModel>().read() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var historyData = [HistoryRealmModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         registerCell()
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        getData()
+    }
+    
+    private func getData() {
+        historyData = RealmManager<HistoryRealmModel>().read()
         tableView.reloadData()
     }
     

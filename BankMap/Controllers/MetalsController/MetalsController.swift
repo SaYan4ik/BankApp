@@ -112,12 +112,26 @@ class MetalsController: UIViewController {
         }
     }
     
-    func rotateView(targetView: UIView, duration: Double = 2.0) {
+    private func rotateView(targetView: UIView, duration: Double = 4.0) {
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
             targetView.transform = targetView.transform.rotated(by: CGFloat(Double.pi))
+//            self.animate()
         }) { finished in
             self.rotateView(targetView: self.noViewImage, duration: duration)
+//            self.animate()
         }
+    }
+    
+    private func animate() {
+        UIView.animate(withDuration: 2.0,
+                       animations: {
+            self.noViewImage.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.8) {
+                self.noViewImage.transform = CGAffineTransform.identity
+            }
+        })
     }
     
 }
