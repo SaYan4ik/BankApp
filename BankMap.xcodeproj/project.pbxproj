@@ -14,6 +14,13 @@
 		A25725E929801F6200972B14 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725E729801F6200972B14 /* NewsCell.swift */; };
 		A25725EA29801F6200972B14 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25725E829801F6200972B14 /* NewsCell.xib */; };
 		A25725ED298034F500972B14 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725EC298034F500972B14 /* StringExtension.swift */; };
+		A25725F029803AB600972B14 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725EF29803AB600972B14 /* RealmManager.swift */; };
+		A25725F229803AEA00972B14 /* HistoryRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725F129803AEA00972B14 /* HistoryRealmModel.swift */; };
+		A25725F529803C4100972B14 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725F429803C4100972B14 /* RequestType.swift */; };
+		A25725F929803F5600972B14 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725F729803F5600972B14 /* HistoryController.swift */; };
+		A25725FA29803F5600972B14 /* HistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25725F829803F5600972B14 /* HistoryController.xib */; };
+		A25725FE2980400100972B14 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725FC2980400100972B14 /* HistoryCell.swift */; };
+		A25725FF2980400100972B14 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25725FD2980400100972B14 /* HistoryCell.xib */; };
 		A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE529770BAD0057989F /* TabBarController.swift */; };
 		A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEC297710CB0057989F /* FilialModel.swift */; };
 		A2C1FAF129771B970057989F /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEF29771B970057989F /* BankCell.swift */; };
@@ -55,6 +62,13 @@
 		A25725E729801F6200972B14 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		A25725E829801F6200972B14 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		A25725EC298034F500972B14 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A25725EF29803AB600972B14 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A25725F129803AEA00972B14 /* HistoryRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRealmModel.swift; sourceTree = "<group>"; };
+		A25725F429803C4100972B14 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		A25725F729803F5600972B14 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		A25725F829803F5600972B14 /* HistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryController.xib; sourceTree = "<group>"; };
+		A25725FC2980400100972B14 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		A25725FD2980400100972B14 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		A2C1FAE529770BAD0057989F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A2C1FAEC297710CB0057989F /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		A2C1FAEF29771B970057989F /* BankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
@@ -143,9 +157,36 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		A25725EE29803AA700972B14 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				A25725EF29803AB600972B14 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		A25725F629803F3C00972B14 /* HistoryController */ = {
+			isa = PBXGroup;
+			children = (
+				A25725F729803F5600972B14 /* HistoryController.swift */,
+				A25725F829803F5600972B14 /* HistoryController.xib */,
+			);
+			path = HistoryController;
+			sourceTree = "<group>";
+		};
+		A25725FB29803FF300972B14 /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				A25725FC2980400100972B14 /* HistoryCell.swift */,
+				A25725FD2980400100972B14 /* HistoryCell.xib */,
+			);
+			path = HistoryCell;
+			sourceTree = "<group>";
+		};
 		A29FA6F4297E80C4009A20BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A25725F629803F3C00972B14 /* HistoryController */,
 				A25725E029801F1F00972B14 /* NewsController */,
 				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
 				A2DCECF829706E0C00A5B216 /* MapBankController */,
@@ -175,6 +216,7 @@
 		A2C1FAEE29771B770057989F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A25725FB29803FF300972B14 /* HistoryCell */,
 				A25725E629801F5100972B14 /* NewsCell */,
 				A2C1FB0E2979B8120057989F /* MetalsCell */,
 				A2C1FB052979A3FA0057989F /* GemsCell */,
@@ -198,6 +240,7 @@
 			children = (
 				A2C1FAF92977E1230057989F /* BankType.swift */,
 				A2C1FB132979BBA20057989F /* MetalType.swift */,
+				A25725F429803C4100972B14 /* RequestType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -259,6 +302,7 @@
 		A2DCECDB2970662100A5B216 /* BankMap */ = {
 			isa = PBXGroup;
 			children = (
+				A25725EE29803AA700972B14 /* RealmManager */,
 				A25725EB298034E000972B14 /* Extension */,
 				A29FA6F4297E80C4009A20BD /* Controllers */,
 				A2C1FAF82977E0B10057989F /* Enums */,
@@ -293,6 +337,7 @@
 				A2C1FB0A2979A7A20057989F /* GemModel.swift */,
 				A2C1FB0C2979A9090057989F /* MetalModel.swift */,
 				A25725DE29801D0200972B14 /* NewsModel.swift */,
+				A25725F129803AEA00972B14 /* HistoryRealmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,9 +416,11 @@
 				A2C1FAF229771B970057989F /* BankCell.xib in Resources */,
 				A2C1FAFE2979A21E0057989F /* GemsController.xib in Resources */,
 				A2C1FB092979A4120057989F /* GemsCell.xib in Resources */,
+				A25725FA29803F5600972B14 /* HistoryController.xib in Resources */,
 				A2DCECE92970662300A5B216 /* LaunchScreen.storyboard in Resources */,
 				A2DCECFC29706E3800A5B216 /* BankLocationMapController.xib in Resources */,
 				A25725EA29801F6200972B14 /* NewsCell.xib in Resources */,
+				A25725FF2980400100972B14 /* HistoryCell.xib in Resources */,
 				A25725E429801F3A00972B14 /* NewsController.xib in Resources */,
 				A2DCECE62970662300A5B216 /* Assets.xcassets in Resources */,
 				A2DCECE42970662100A5B216 /* Main.storyboard in Resources */,
@@ -461,12 +508,17 @@
 				A25725E929801F6200972B14 /* NewsCell.swift in Sources */,
 				A2C1FB022979A2930057989F /* MetalsController.swift in Sources */,
 				A2DCECFB29706E3800A5B216 /* BankLocationMapController.swift in Sources */,
+				A25725F229803AEA00972B14 /* HistoryRealmModel.swift in Sources */,
 				A2DCECF7297067C800A5B216 /* BankProvider.swift in Sources */,
+				A25725F529803C4100972B14 /* RequestType.swift in Sources */,
 				A2C1FB112979B8220057989F /* MetalCell.swift in Sources */,
 				A2C1FB142979BBA20057989F /* MetalType.swift in Sources */,
 				A2C1FAF129771B970057989F /* BankCell.swift in Sources */,
+				A25725F029803AB600972B14 /* RealmManager.swift in Sources */,
 				A2DCECDF2970662100A5B216 /* SceneDelegate.swift in Sources */,
 				A2C1FAFA2977E1230057989F /* BankType.swift in Sources */,
+				A25725FE2980400100972B14 /* HistoryCell.swift in Sources */,
+				A25725F929803F5600972B14 /* HistoryController.swift in Sources */,
 				A2DCECF5297067BE00A5B216 /* BankAPI.swift in Sources */,
 				A2C1FAFD2979A21E0057989F /* GemsController.swift in Sources */,
 				A25725ED298034F500972B14 /* StringExtension.swift in Sources */,
