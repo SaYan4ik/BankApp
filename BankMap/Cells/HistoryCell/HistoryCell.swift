@@ -10,6 +10,9 @@ import UIKit
 class HistoryCell: UITableViewCell {
     @IBOutlet weak var requestHistoreyLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var statusCodeLabel: UILabel!
+    
+    @IBOutlet weak var container: UIStackView!
     
     static var id = String(describing: HistoryCell.self)
     
@@ -19,8 +22,9 @@ class HistoryCell: UITableViewCell {
     
     func set(request: HistoryRealmModel) {
         self.requestHistoreyLabel.text = request.request
-        self.dateLabel.text = request.date
-        self.layer.cornerRadius = 12
+        self.statusCodeLabel.text = "Status code: " + String(request.statusCode)
+        self.dateLabel.text = "Date of request \(request.date.formatted())"
+        self.container.layer.cornerRadius = 12
     }
     
 }

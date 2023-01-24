@@ -8,8 +8,9 @@
 import Foundation
 
 enum RequestType: String, CaseIterable {
-    case getCoordBanks = "Get cooardinate about banks and atm"
+    case getCoordFilials = "Get cooardinate about filials"
+    case getCoordAtm = "Get cooardinate aboutatm"
     case getInfoGems = "Get info about gems"
-    case getInfoMetalls = "Get info about mettals"
+    case getInfoMetals = "Get info about mettals"
     case getNews = "Get news"
 }

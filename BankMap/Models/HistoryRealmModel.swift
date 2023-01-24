@@ -9,19 +9,22 @@ import Foundation
 import RealmSwift
 
 class HistoryRealmModel: Object {
-    @objc dynamic var date: String = ""
-    var request = RequestType.getCoordBanks.rawValue
+    
+    @objc dynamic var date = Date()
+    @objc dynamic var statusCode: Int = 0
+    var request = RequestType.getCoordFilials.rawValue
     var requestEnum: RequestType {
         get {
-            return RequestType(rawValue: request) ?? .getCoordBanks
+            return RequestType(rawValue: request) ?? .getCoordFilials
         }
         set {
             request = newValue.rawValue
         }
     }
     
-    convenience init(date: String) {
+    convenience init(date: Date, statusCode: Int) {
         self.init()
         self.date = date
+        self.statusCode = statusCode
     }
 }

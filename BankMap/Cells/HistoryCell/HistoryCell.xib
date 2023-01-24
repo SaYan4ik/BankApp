@@ -20,13 +20,19 @@
                         <rect key="frame" x="5" y="5" width="310" height="86"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf7-hJ-6uQ">
-                                <rect key="frame" x="5" y="6.6666666666666679" width="300" height="34.666666666666657"/>
+                                <rect key="frame" x="5" y="0.66666666666666607" width="300" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQh-7l-sNr">
+                                <rect key="frame" x="5" y="32.333333333333336" width="300" height="22"/>
                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xf-PM-EwR">
-                                <rect key="frame" x="5" y="51.333333333333343" width="300" height="34.666666666666657"/>
+                                <rect key="frame" x="5" y="64.333333333333329" width="300" height="21.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +43,8 @@
                             <constraint firstItem="uf7-hJ-6uQ" firstAttribute="leading" secondItem="Xc0-1c-eGL" secondAttribute="leading" constant="5" id="1Oa-Hi-HVu"/>
                             <constraint firstAttribute="trailing" secondItem="6Xf-PM-EwR" secondAttribute="trailing" constant="5" id="9bP-RP-Ju7"/>
                             <constraint firstItem="6Xf-PM-EwR" firstAttribute="leading" secondItem="Xc0-1c-eGL" secondAttribute="leading" constant="5" id="MM5-J7-B4s"/>
+                            <constraint firstAttribute="trailing" secondItem="kQh-7l-sNr" secondAttribute="trailing" constant="5" id="UE7-ib-33W"/>
+                            <constraint firstItem="kQh-7l-sNr" firstAttribute="leading" secondItem="Xc0-1c-eGL" secondAttribute="leading" constant="5" id="iDz-XF-RfE"/>
                             <constraint firstItem="uf7-hJ-6uQ" firstAttribute="top" secondItem="Xc0-1c-eGL" secondAttribute="top" constant="5" id="pgO-XF-mvL"/>
                         </constraints>
                     </stackView>
@@ -51,8 +59,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="container" destination="Xc0-1c-eGL" id="4AS-BC-uOm"/>
                 <outlet property="dateLabel" destination="6Xf-PM-EwR" id="Ooq-pJ-CV2"/>
                 <outlet property="requestHistoreyLabel" destination="uf7-hJ-6uQ" id="akD-qC-EhM"/>
+                <outlet property="statusCodeLabel" destination="kQh-7l-sNr" id="QAp-lg-JN7"/>
             </connections>
             <point key="canvasLocation" x="116.92307692307692" y="39.099526066350712"/>
         </tableViewCell>

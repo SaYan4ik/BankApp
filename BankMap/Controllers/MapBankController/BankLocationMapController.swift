@@ -16,7 +16,6 @@ class BankLocationMapController: UIViewController {
     @IBOutlet weak var atmBankCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    
     let locationManager = CLLocationManager()
     private var data = [BankModel]()
     private var filials = [FilialModel]()
