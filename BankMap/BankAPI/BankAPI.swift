@@ -13,6 +13,7 @@ enum BankAPI {
     case getFilialInfo(city: String)
     case getGemsInfo(city: String)
     case getMetalsInfo(city: String)
+    case getBankNews
 }
 
 extension BankAPI: TargetType {
@@ -30,6 +31,8 @@ extension BankAPI: TargetType {
                 return "/getgems"
             case .getMetalsInfo:
                 return "/getinfodrall"
+            case .getBankNews:
+               return "/news_info"
         }
     }
     
@@ -42,6 +45,8 @@ extension BankAPI: TargetType {
             case .getGemsInfo:
                 return .get
             case .getMetalsInfo:
+                return .get
+            case .getBankNews:
                 return .get
         }
     }
@@ -72,6 +77,8 @@ extension BankAPI: TargetType {
                 params["city"] = city
             case .getMetalsInfo(let city):
                 params["city"] = city
+            case .getBankNews:
+                params["lang"] = "ru"
         }
         return params
     }
@@ -85,6 +92,8 @@ extension BankAPI: TargetType {
             case .getGemsInfo:
                 return URLEncoding.queryString
             case .getMetalsInfo:
+                return URLEncoding.queryString
+            case .getBankNews:
                 return URLEncoding.queryString
         }
     }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1728127309C3D682AD4B874E /* Pods_BankMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */; };
+		A25725DF29801D0200972B14 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725DE29801D0200972B14 /* NewsModel.swift */; };
+		A25725E329801F3A00972B14 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725E129801F3A00972B14 /* NewsController.swift */; };
+		A25725E429801F3A00972B14 /* NewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25725E229801F3A00972B14 /* NewsController.xib */; };
+		A25725E929801F6200972B14 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25725E729801F6200972B14 /* NewsCell.swift */; };
+		A25725EA29801F6200972B14 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25725E829801F6200972B14 /* NewsCell.xib */; };
 		A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAE529770BAD0057989F /* TabBarController.swift */; };
 		A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEC297710CB0057989F /* FilialModel.swift */; };
 		A2C1FAF129771B970057989F /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1FAEF29771B970057989F /* BankCell.swift */; };
@@ -43,6 +48,11 @@
 		1CAB5F5FB14F2D3534D8434E /* Pods-BankMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankMap.release.xcconfig"; path = "Target Support Files/Pods-BankMap/Pods-BankMap.release.xcconfig"; sourceTree = "<group>"; };
 		6B2068A4F834DA49D4FB68F6 /* Pods_BankMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D32020E73FBAE893F54E85E /* Pods-BankMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankMap.debug.xcconfig"; path = "Target Support Files/Pods-BankMap/Pods-BankMap.debug.xcconfig"; sourceTree = "<group>"; };
+		A25725DE29801D0200972B14 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		A25725E129801F3A00972B14 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		A25725E229801F3A00972B14 /* NewsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsController.xib; sourceTree = "<group>"; };
+		A25725E729801F6200972B14 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		A25725E829801F6200972B14 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		A2C1FAE529770BAD0057989F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A2C1FAEC297710CB0057989F /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		A2C1FAEF29771B970057989F /* BankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
@@ -105,9 +115,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A25725E029801F1F00972B14 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				A25725E129801F3A00972B14 /* NewsController.swift */,
+				A25725E229801F3A00972B14 /* NewsController.xib */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		A25725E629801F5100972B14 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A25725E729801F6200972B14 /* NewsCell.swift */,
+				A25725E829801F6200972B14 /* NewsCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
 		A29FA6F4297E80C4009A20BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A25725E029801F1F00972B14 /* NewsController */,
 				A2A51BBD29770B3C00B9DB92 /* TabBarController */,
 				A2DCECF829706E0C00A5B216 /* MapBankController */,
 				A2C1FAFF2979A2710057989F /* MetalsController */,
@@ -136,6 +165,7 @@
 		A2C1FAEE29771B770057989F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A25725E629801F5100972B14 /* NewsCell */,
 				A2C1FB0E2979B8120057989F /* MetalsCell */,
 				A2C1FB052979A3FA0057989F /* GemsCell */,
 				A2C1FB042979A3EA0057989F /* AtmCell */,
@@ -251,6 +281,7 @@
 				A2C1FAEC297710CB0057989F /* FilialModel.swift */,
 				A2C1FB0A2979A7A20057989F /* GemModel.swift */,
 				A2C1FB0C2979A9090057989F /* MetalModel.swift */,
+				A25725DE29801D0200972B14 /* NewsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +362,8 @@
 				A2C1FB092979A4120057989F /* GemsCell.xib in Resources */,
 				A2DCECE92970662300A5B216 /* LaunchScreen.storyboard in Resources */,
 				A2DCECFC29706E3800A5B216 /* BankLocationMapController.xib in Resources */,
+				A25725EA29801F6200972B14 /* NewsCell.xib in Resources */,
+				A25725E429801F3A00972B14 /* NewsController.xib in Resources */,
 				A2DCECE62970662300A5B216 /* Assets.xcassets in Resources */,
 				A2DCECE42970662100A5B216 /* Main.storyboard in Resources */,
 				A2C1FB032979A2930057989F /* MetalsController.xib in Resources */,
@@ -407,11 +440,14 @@
 				A2C1FB0D2979A9090057989F /* MetalModel.swift in Sources */,
 				A2C1FAED297710CB0057989F /* FilialModel.swift in Sources */,
 				A2C1FB082979A4120057989F /* GemsCell.swift in Sources */,
+				A25725E329801F3A00972B14 /* NewsController.swift in Sources */,
 				A2DCECE12970662100A5B216 /* ViewController.swift in Sources */,
+				A25725DF29801D0200972B14 /* NewsModel.swift in Sources */,
 				A2C1FB0B2979A7A20057989F /* GemModel.swift in Sources */,
 				A2C1FAF629771C120057989F /* CityCell.swift in Sources */,
 				A2C1FAE629770BAD0057989F /* TabBarController.swift in Sources */,
 				A2DCECDD2970662100A5B216 /* AppDelegate.swift in Sources */,
+				A25725E929801F6200972B14 /* NewsCell.swift in Sources */,
 				A2C1FB022979A2930057989F /* MetalsController.swift in Sources */,
 				A2DCECFB29706E3800A5B216 /* BankLocationMapController.swift in Sources */,
 				A2DCECF7297067C800A5B216 /* BankProvider.swift in Sources */,

@@ -66,4 +66,18 @@ final class GetBankInfo {
         }
     }
     
+    func getNewsForBank(complition: @escaping ([NewsModel]) -> Void, failure: (() -> Void)? = nil) {
+        provider.request(.getBankNews) { result in
+            switch result {
+                case .success(let response):
+                    guard let news = try? response.mapArray(NewsModel.self) else { return }
+                    complition(news)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    failure?()
+            }
+        }
+    }
+    
+    
 }
