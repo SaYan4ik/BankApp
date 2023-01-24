@@ -8,7 +8,6 @@
 import UIKit
 
 class NewsController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     
     private var news = [NewsModel]()
@@ -45,7 +44,7 @@ extension NewsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.id, for: indexPath)
         guard let newsCell = cell as? NewsCell else { return cell }
-        
+        newsCell.set(news: news[indexPath.row])
         return newsCell
     }
     
@@ -53,5 +52,10 @@ extension NewsController: UITableViewDataSource {
 }
 
 extension NewsController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let urlString = news[indexPath.row].link
+        if let url = URL(string: urlString) {
+            UIApplication.shared.openURL(url)
+        }
+    }
 }

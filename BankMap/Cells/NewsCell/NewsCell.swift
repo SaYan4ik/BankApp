@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsCell: UITableViewCell {
-
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var titleNewsLabel: UILabel!
     @IBOutlet weak var newsTextView: UITextView!
@@ -21,8 +21,7 @@ class NewsCell: UITableViewCell {
     
     func set(news: NewsModel) {
         self.titleNewsLabel.text = news.nameRu
-        self.newsTextView.text = news.htmlRu
-        
+//        self.newsTextView.attributedText = news.htmlRu.htmlToAttributedString
+        newsImageView.sd_setImage(with: URL(string: news.imgURL))
     }
-    
 }

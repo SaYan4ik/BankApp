@@ -12,6 +12,7 @@ class NewsModel: Mappable {
     var nameRu: String = ""
     var htmlRu: String = ""
     var startDate: String = ""
+    var imgURL: String = ""
     var link: String = ""
     
     required init?(map: ObjectMapper.Map) {
@@ -22,6 +23,7 @@ class NewsModel: Mappable {
         nameRu              <- map["name_ru"]
         htmlRu              <- map["html_ru"]
         startDate           <- map["start_date"]
-        link                <- map["start_date"]
+        imgURL              <- map["img"]
+        link                <- map["link"]
     }
 }

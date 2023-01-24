@@ -10,6 +10,7 @@ target 'BankMap' do
 	pod 'Moya'
 	pod 'Moya-ObjectMapper', '2.9'
 	pod 'RealmSwift'
+	pod 'SDWebImage'
 
 end
 
