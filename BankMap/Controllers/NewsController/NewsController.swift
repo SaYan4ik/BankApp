@@ -32,8 +32,6 @@ class NewsController: UIViewController {
         let nib = UINib(nibName: NewsCell.id, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: NewsCell.id)
     }
-    
-
 }
 
 extension NewsController: UITableViewDataSource {
@@ -47,8 +45,6 @@ extension NewsController: UITableViewDataSource {
         newsCell.set(news: news[indexPath.row])
         return newsCell
     }
-    
-    
 }
 
 extension NewsController: UITableViewDelegate {

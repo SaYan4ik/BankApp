@@ -19,7 +19,8 @@ class CityCell: UICollectionViewCell {
     
     func set(name: String) {
         cityLabel.text = name
-        applyShadow(cornerRadius: 12)
+        container.layer.borderWidth = self.isSelected ? 2 : 0
+        self.container.layer.cornerRadius = 12
     }
     
     private func applyShadow(cornerRadius: CGFloat) {

@@ -14,7 +14,6 @@ class TabBarController: UITabBarController {
         configureTabBar()
     }
     
-    
     private func configureTabBar() {
         
         let mapVC = BankLocationMapController(nibName: "BankLocationMapController", bundle: nil)

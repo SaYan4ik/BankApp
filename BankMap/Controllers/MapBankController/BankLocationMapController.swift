@@ -16,7 +16,7 @@ class BankLocationMapController: UIViewController {
     @IBOutlet weak var atmBankCollectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     private var data = [BankModel]()
     private var filials = [FilialModel]()
     private var bankAtmType = BankType.allCases
@@ -27,6 +27,10 @@ class BankLocationMapController: UIViewController {
         didSet {
             cityName = Array(Set(cityName))
             cityName = cityName.sorted(by: {$0 < $1})
+            
+            if let index = cityName.firstIndex(of: "Минск") {
+                selectedIndexPath = IndexPath(row: index, section: 0)
+            }
         }
     }
 
@@ -36,14 +40,18 @@ class BankLocationMapController: UIViewController {
         getBankInfo()
         registrationCell()
         
+        drawMarkersForBankCity(city: cityName.first ?? "Минск")
+        drawMarkersForFilialCity(city: cityName.first ?? "Минск")
+        
         cityCollectionView.dataSource = self
         cityCollectionView.delegate = self
         atmBankCollectionView.dataSource = self
         atmBankCollectionView.delegate = self
-
+        
         cityCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         atmBankCollectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-
+    
+        
         mapView.isMyLocationEnabled = true
         locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
@@ -59,7 +67,6 @@ class BankLocationMapController: UIViewController {
         let camera = GMSCameraPosition(latitude: myPosition.latitude, longitude: myPosition.longitude, zoom: 8)
         mapView.animate(to: camera)
     }
-    
     
     private func registrationCell() {
         let nib = UINib(nibName: BankCell.id, bundle: nil)
@@ -139,9 +146,6 @@ class BankLocationMapController: UIViewController {
         }
         
     }
-    
-   
-
 }
 
 // MARK: -
@@ -233,8 +237,9 @@ extension BankLocationMapController: UICollectionViewDataSource {
         if collectionView == cityCollectionView {
             let cell = cityCollectionView.dequeueReusableCell(withReuseIdentifier: CityCell.id, for: indexPath)
             guard let cityCell = cell as? CityCell else { return cell }
+            cityCell.isSelected = indexPath == selectedIndexPath
+            cityCollectionView.scrollToItem(at: IndexPath(item: selectedIndexPath.row, section: 0), at: [], animated: true)
             cityCell.set(name: cityName[indexPath.item])
-            
             return cityCell
         } else {
             let cell = atmBankCollectionView.dequeueReusableCell(withReuseIdentifier: BankCell.id, for: indexPath)
@@ -252,8 +257,11 @@ extension BankLocationMapController: UICollectionViewDataSource {
 
 extension BankLocationMapController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if collectionView == cityCollectionView {
+            self.selectedIndexPath = indexPath
             city = cityName[indexPath.item]
+            
             mapView.clear()
             
             drawMarkersForBankCity(city: cityName[indexPath.item])
@@ -279,6 +287,7 @@ extension BankLocationMapController: UICollectionViewDelegate {
             }
         }
     }
+                
 }
 
 // MARK: -
@@ -293,19 +302,4 @@ extension BankLocationMapController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 40)
     }
 }
-
-
-//extension BankLocationMapController: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations.last
-//        guard let latitude = location?.coordinate.latitude,
-//              let longitude = location?.coordinate.longitude
-//        else { return }
-//
-//
-//        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17.0)
-//        self.mapView?.animate(to: camera)
-//        self.locationManager.stopUpdatingLocation()
-//    }
-//}
 
